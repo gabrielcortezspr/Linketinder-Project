@@ -1,9 +1,10 @@
 import Server.Dados
+import Server.Vaga
 import Users.Candidato
 import Users.Empresa
 import Terminal.UITerminal
 // empresas
-new Empresa(
+Empresa empresa1 = new Empresa(
         "Tech Solutions",
         "contato@techsolutions.com",
         "12.345.678/0001-99",
@@ -14,7 +15,7 @@ new Empresa(
         ["Desenvolvimento de Software", "Automação", "Inteligência Artificial"]
 )
 
-new Empresa(
+Empresa empresa2 = new Empresa(
         "InovaTech",
         "suporte@inovatech.com",
         "98.765.432/0001-88",
@@ -25,7 +26,7 @@ new Empresa(
         ["IoT", "Big Data", "Cloud Computing"]
 )
 
-new Empresa(
+Empresa empresa3 = new Empresa(
         "Green Future",
         "contato@greenfuture.com",
         "55.444.333/0001-77",
@@ -59,7 +60,7 @@ new Empresa(
 )
 //candidatos
 
-new Candidato(
+Candidato candidato1 = new Candidato(
         "Lucas Martins",
         "lucas.martins@email.com",
         "123.456.789-00",
@@ -70,7 +71,7 @@ new Candidato(
         ["Desenvolvimento de Software", "Automação", "Inteligência Artificial", "Java", "Python"]
 ) // Alinhado com a empresa Tech Solutions
 
-new Candidato(
+Candidato candidato2 = new Candidato(
         "Ana Pereira",
         "ana.pereira@email.com",
         "987.654.321-11",
@@ -81,7 +82,7 @@ new Candidato(
         ["IoT", "Big Data", "Cloud Computing", "Python", "C++"]
 ) // Alinhada com a empresa InovaTech
 
-new Candidato(
+Candidato candidato3 = new Candidato(
         "Roberto Lima",
         "roberto.lima@email.com",
         "456.789.123-22",
@@ -92,6 +93,25 @@ new Candidato(
         ["Energias Renováveis", "Sustentabilidade", "Agricultura Inteligente", "Data Science"]
 ) // Alinhado com a empresa Green Future
 
-UITerminal.exibirMenu()
+// Criando vagas para as empresas
+Vaga vaga1 = empresa1.criarVaga("Desenvolvedor Full-Stack")
+Vaga vaga2 = empresa2.criarVaga("Engenheiro de Software IoT")
+Vaga vaga3 = empresa3.criarVaga("Engenheiro Ambiental Sustentável")
+
+// Candidatos curtindo vagas
+candidato1.curtirVaga(vaga1)  // Lucas curte a vaga de Desenvolvedor Full-Stack
+candidato2.curtirVaga(vaga2)  // Ana curte a vaga de Engenheiro de Software IoT
+candidato3.curtirVaga(vaga3)  // Roberto curte a vaga de Engenheiro Ambiental Sustentável
+
+// Empresas curtindo candidatos
+empresa1.curtirCandidato(candidato1, vaga1)  // Tech Solutions curte Lucas para a vaga
+empresa2.curtirCandidato(candidato2, vaga2)  // InovaTech curte Ana para a vaga
+empresa3.curtirCandidato(candidato3, vaga3)  // Green Future curte Roberto para a vaga
+
+// Verificando se houve match
+Dados.verificarMatches(empresa1, candidato1)  // Espera-se um match entre Lucas e Tech Solutions
+Dados.verificarMatches(empresa2, candidato2)  // Espera-se um match entre Ana e InovaTech
+Dados.verificarMatches(empresa3, candidato3)  // Espera-se um match entre Roberto e Green Future
+
 
 
