@@ -1,5 +1,6 @@
 package Users
 import Server.Dados
+import Server.Vaga
 import groovy.transform.Canonical
 
 
@@ -12,7 +13,9 @@ class Candidato {
     String estado
     String CEP
     String descricao
-    List <String> CompetenciasCandidato
+    List<String> CompetenciasCandidato = []
+    List<Vaga> vagasCurtidas = []
+
 
     Candidato(String nome, String email, String cpf, int idade, String estado, String CEP, String descricao, List<String> competenciasCandidato) {
         this.nome = nome
@@ -26,7 +29,6 @@ class Candidato {
 
         Dados.listaCandidatos << this
     }
-
     @Override
     String toString() {
         return """\
@@ -40,6 +42,12 @@ class Candidato {
         Competências: ${CompetenciasCandidato.join(', ')}
         """
     }
+    void curtirVaga(Vaga vaga){
+        if (!vagasCurtidas.contains(vaga)){
+            vagasCurtidas.add(vaga)
+            println("$nome curtiu vaga ${vaga.titulo}")
 
+        }
+    }
 
 }
