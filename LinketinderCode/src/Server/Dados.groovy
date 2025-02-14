@@ -10,24 +10,13 @@ class Dados {
     static List<Candidato> listaCandidatos = []
     static List<Empresa> listaEmpresas = []
 
-    // Método para adicionar um candidato
-    static void adicionarCandidato(Candidato candidato) {
-        listaCandidatos << candidato
-    }
-
-    // Método para listar candidatos
+    // Métodos para Lista Candidatos e Empresa
     static void listarCandidatos() {
         println "Lista de Candidatos:"
         listaCandidatos.each { println it }
     }
-
-    static void adicionarEmpresa (Empresa empresa){
-        listaEmpresas << empresa
-    }
-
-    // Método para listar Empresas
     static void listarEmpresas() {
-        println "Lista de Empresas:"
+        println ("Lista de Empresas: "+ listaEmpresas.size())
         listaEmpresas.each { println it }
     }
 }

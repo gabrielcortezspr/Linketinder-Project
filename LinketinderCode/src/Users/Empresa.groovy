@@ -4,6 +4,7 @@ import groovy.transform.Canonical
 
 @Canonical
 class Empresa {
+
     String nome
     String emailCorp
     String cnpj
