@@ -1,7 +1,8 @@
 package Users
+import Server.Dados
 import groovy.transform.Canonical
 
-@Canonical
+
 class Candidato {
 
     String nome
@@ -12,6 +13,17 @@ class Candidato {
     String CEP
     String descricao
     List <String> CompetenciasCandidato
+
+    Candidato(String nome, String email, String cpf, int idade, String estado, String CEP, String descricao, List<String> competenciasCandidato) {
+        this.nome = nome
+        this.email = email
+        this.cpf = cpf
+        this.idade = idade
+        this.estado = estado
+        this.CEP = CEP
+        this.descricao = descricao
+        CompetenciasCandidato = competenciasCandidato
+    }
 
     @Override
     String toString() {

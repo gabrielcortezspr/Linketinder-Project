@@ -1,3 +1,4 @@
+import Server.Dados
 import Users.Empresa
 
 static void main(String[] args) {
@@ -7,5 +8,12 @@ static void main(String[] args) {
 def empresa = new Empresa("Tech Solutions", "contato@techsolutions.com", "12.345.678/0001-90",
         "Brasil", "Amazonas", "69000-000", "Empresa especializada em soluções tecnológicas.",
         ["Desenvolvimento de Software", "Automação", "IA", "Cloud Computing"])
+def empresa2 = new Empresa("BBBBBB", "contato@techsolutions.com", "12.345.678/0001-90",
+        "Brasil", "Amazonas", "69000-000", "Empresa especializada em soluções tecnológicas.",
+        ["Desenvolvimento de Software", "Automação", "IA", "Cloud Computing"])
+def empresa3 = new Empresa("CCCCCC", "contato@techsolutions.com", "12.345.678/0001-90",
+        "Brasil", "Amazonas", "69000-000", "Empresa especializada em soluções tecnológicas.",
+        ["Desenvolvimento de Software", "Automação", "IA", "Cloud Computing"])
 
-println empresa
+Dados.listarEmpresas()
+
