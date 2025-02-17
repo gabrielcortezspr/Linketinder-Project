@@ -10,9 +10,8 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.apache.groovy:groovy:4.0.14'
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'org.apache.groovy:groovy:4.0.14'  // Versão do Groovy
+    testImplementation 'org.spockframework:spock-core:2.3-groovy-4.0'  // Spock para testes Groovy
 }
 
 test {
