@@ -2,7 +2,7 @@ import Server.Dados
 import Server.Vaga
 import Users.Candidato
 import Users.Empresa
-import Terminal.UITerminal
+
 // empresas
 Empresa empresa1 = new Empresa(
         "Tech Solutions",
@@ -93,22 +93,19 @@ Candidato candidato3 = new Candidato(
         ["Energias Renováveis", "Sustentabilidade", "Agricultura Inteligente", "Data Science"]
 ) // Alinhado com a empresa Green Future
 
-// Criando vagas para as empresas
+
 Vaga vaga1 = empresa1.criarVaga("Desenvolvedor Full-Stack")
 Vaga vaga2 = empresa2.criarVaga("Engenheiro de Software IoT")
 Vaga vaga3 = empresa3.criarVaga("Engenheiro Ambiental Sustentável")
 
-// Candidatos curtindo vagas
 candidato1.curtirVaga(vaga1)  // Lucas curte a vaga de Desenvolvedor Full-Stack
 candidato2.curtirVaga(vaga2)  // Ana curte a vaga de Engenheiro de Software IoT
 candidato3.curtirVaga(vaga3)  // Roberto curte a vaga de Engenheiro Ambiental Sustentável
 
-// Empresas curtindo candidatos
 empresa1.curtirCandidato(candidato1, vaga1)  // Tech Solutions curte Lucas para a vaga
 empresa2.curtirCandidato(candidato2, vaga2)  // InovaTech curte Ana para a vaga
 empresa3.curtirCandidato(candidato3, vaga3)  // Green Future curte Roberto para a vaga
 
-// Verificando se houve match
 Dados.verificarMatches(empresa1, candidato1)  // Espera-se um match entre Lucas e Tech Solutions
 Dados.verificarMatches(empresa2, candidato2)  // Espera-se um match entre Ana e InovaTech
 Dados.verificarMatches(empresa3, candidato3)  // Espera-se um match entre Roberto e Green Future

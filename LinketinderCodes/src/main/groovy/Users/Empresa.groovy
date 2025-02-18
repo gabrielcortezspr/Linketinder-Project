@@ -28,8 +28,6 @@ class Empresa {
         this.descricao = descricao
         this.competenciasEmpresa = competenciasEmpresa
 
-        // Adiciona a empresa à lista de empresas dentro de Dados
-        Dados.listaEmpresas << this
     }
 
     @Override

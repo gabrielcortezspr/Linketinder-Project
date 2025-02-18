@@ -1,5 +1,6 @@
 plugins {
     id 'groovy'
+    id 'java'  // Adicionando o plugin Java, já que o Spock utiliza dependências de teste baseadas em JUnit
 }
 
 group = 'org.example'
@@ -12,8 +13,36 @@ repositories {
 dependencies {
     implementation 'org.apache.groovy:groovy:4.0.14'  // Versão do Groovy
     testImplementation 'org.spockframework:spock-core:2.3-groovy-4.0'  // Spock para testes Groovy
+
+    // Dependência do JUnit Platform para executar Spock corretamente
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
+sourceSets {
+    main {
+        groovy {
+            srcDirs = ['src/main/groovy']  // Defina o diretório de código Groovy de produção
+        }
+        java {
+            srcDirs = ['src/main/java']  // Para código Java, se houver
+        }
+    }
+    test {
+        groovy {
+            srcDirs = ['src/test/groovy']  // Defina o diretório de testes Groovy
+        }
+        java {
+            srcDirs = ['src/test/java']  // Para testes Java, se houver
+        }
+    }
+}
+
+
 test {
-    useJUnitPlatform()
+    // Configurações específicas para rodar testes com Spock no JUnit Platform
+    useJUnitPlatform()  // Garante que o Spock será executado no JUnit Platform, necessário para integrações com Gradle
+    testLogging {
+        events "passed", "skipped", "failed"  // Log dos testes que foram passados, pulados ou falharam
+    }
+
 }

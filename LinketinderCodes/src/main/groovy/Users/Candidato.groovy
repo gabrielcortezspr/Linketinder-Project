@@ -26,7 +26,7 @@ class Candidato {
         this.descricao = descricao
         CompetenciasCandidato = competenciasCandidato
 
-        Dados.listaCandidatos << this
+
     }
     @Override
     String toString() {

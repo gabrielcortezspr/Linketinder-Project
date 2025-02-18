@@ -1,7 +1,7 @@
 package Terminal
 import Server.Dados;
 
-public class UITerminal {
+public class UserInterface {
 
     public static void exibirMenu() {
         Scanner scanner = new Scanner(System.in);

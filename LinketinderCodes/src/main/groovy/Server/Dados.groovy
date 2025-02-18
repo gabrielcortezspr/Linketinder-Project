@@ -11,15 +11,25 @@ class Dados {
     static List<Empresa> listaEmpresas  = []
     static List<Vaga> listaVagas  = []
 
+    static void addCandidato ( Candidato candidato){
+        Dados.listaCandidatos << candidato
+    }
+
+    static void addEmpresa (Empresa empresa){
+        Dados.listarEmpresas() << empresa
+    }
+
     // Métodos para Lista Candidatos e Empresa
     static void listarCandidatos() {
         println "Lista de Candidatos:"
         listaCandidatos.each { println it }
     }
+
     static void listarEmpresas() {
         println ("Lista de Empresas: "+ listaEmpresas.size())
         listaEmpresas.each { println it }
     }
+
     static void verificarMatches(Empresa empresa, Candidato candidato) {
 
         boolean candidatoCurtiu = candidato.vagasCurtidas.any { it.empresaCriadora == empresa }
