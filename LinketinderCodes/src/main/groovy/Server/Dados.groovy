@@ -12,11 +12,11 @@ class Dados {
     static List<Vaga> listaVagas  = []
 
     static void addCandidato ( Candidato candidato){
-        Dados.listaCandidatos << candidato
+        listaCandidatos << candidato
     }
 
     static void addEmpresa (Empresa empresa){
-        Dados.listarEmpresas() << empresa
+        listaEmpresas << empresa
     }
 
     // Métodos para Lista Candidatos e Empresa
